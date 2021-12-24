@@ -88,7 +88,7 @@ footer {
 
     .left {
       gap: 32px;
-      color: #fff;
+      color: rgb(224, 195, 195);
       display: flex;
       flex-direction: column;
       align-items: center;
