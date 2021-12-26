@@ -63,10 +63,11 @@ export default {
 
 <style lang="scss" scoped>
 .blog-card-wrap {
+  display: flex;
   h3 {
     font-weight: 300;
     font-size: 28px;
-    margin-bottom: 32px;
+    margin: 32px 0;
   }
 }
 
