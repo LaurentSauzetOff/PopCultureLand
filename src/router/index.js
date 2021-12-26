@@ -10,11 +10,17 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    meta: {
+      title: 'Accueil'
+    }
   },
   {
     path: "/blogs",
     name: "Blogs",
     component: Blogs,
+    meta: {
+      title: 'Articles'
+    }
   },
 ];
 
@@ -23,5 +29,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title} | PopCUltureLand`;
+  next();
+})
 
 export default router;
