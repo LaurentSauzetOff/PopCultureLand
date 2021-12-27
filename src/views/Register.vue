@@ -31,7 +31,7 @@
         </div>
         <div v-show="error" class="error">{{ this.errorMsg }}</div>
       </div>
-      <button @click.prevent="register">Sign Up</button>
+      <button @click.prevent="register">Connexion</button>
       <div class="angle"></div>
     </form>
     <div class="background"></div>

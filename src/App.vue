@@ -1,26 +1,50 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
-      <Navigation />
+      <Navigation v-if="!navigation" />
       <router-view />
-      <Footer />
+      <Footer v-if="!navigation" />
     </div>
   </div>
 </template>
 
 <script>
-import Navigation from './components/Navigation.vue'
-import Footer from './components/Footer.vue'
+import Navigation from "./components/Navigation.vue";
+import Footer from "./components/Footer.vue";
 export default {
   name: "app",
-  components: {Navigation, Footer},
+  components: { Navigation, Footer },
   data() {
-    return {};
+    return {
+      data() {
+        return {
+          navigation: null,
+        };
+      },
+    };
   },
-  created() {},
+  created() {
+    this.checkRoute();
+  },
   mounted() {},
-  methods: {},
-  watch: {},
+  methods: {
+    checkRoute() {
+      if (
+        this.$route.name === "Login" ||
+        this.$route.name === "Register" ||
+        this.$route.name === "ForgotPassword"
+      ) {
+        this.navigation = true;
+        return;
+      }
+      this.navigation = false;
+    },
+  },
+  watch: {
+    $route(){
+      this.checkRoute();
+    }
+  },
 };
 </script>
 
@@ -59,12 +83,12 @@ export default {
 .arrow {
   margin-left: 8px;
   width: 12px;
-  path{
+  path {
     fill: #000;
   }
 }
 
-.arrow-light{
+.arrow-light {
   path {
     fill: #fff;
   }
