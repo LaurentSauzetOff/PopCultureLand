@@ -5,7 +5,7 @@
       :modalMessage="modalMessage"
       v-on:close-modal="closeModal"
     />
-   <!--  <Loading  /> -->
+    <Loading v-if="loading"  />
     <div class="form-wrap">
       <form class="reset">
         <p class="login-register">
@@ -31,9 +31,9 @@
 </template>
 
 <script>
-/* import email from "../assets/Icons/envelope-regular.svg";
-import Modal from "../components/Modal"; */
-/* import Loading from "../components/Loading"; */
+/* import email from "../assets/Icons/envelope-regular.svg"; */
+import Modal from "../components/Modal";
+import Loading from "../components/Loading";
 import firebase from "firebase/app";
 import "firebase/auth";
 export default {
@@ -43,29 +43,29 @@ export default {
       email: "",
       modalActive: false,
       modalMessage: "",
-     /*  loading: null, */
+      loading: null,
     };
   },
   components: {
-    /* email,
-    Modal, */
-   /*  Loading, */
+    /*email,*/
+    Modal,
+    Loading,
   },
   methods: {
     resetPassword() {
-  /*     this.loading = true; */
+      this.loading = true;
       firebase
         .auth()
         .sendPasswordResetEmail(this.email)
         .then(() => {
           this.modalMessage =
             "If your account exists, you will receive a email";
-     /*      this.loading = false; */
+          this.loading = false;
           this.modalActive = true;
         })
         .catch((err) => {
           this.modalMessage = err.message;
-      /*     this.loading = false; */
+          this.loading = false;
           this.modalActive = true;
         });
     },

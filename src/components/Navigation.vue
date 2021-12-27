@@ -11,7 +11,7 @@
           <router-link class="link" :to="{name: 'Home'}">Accueil</router-link>
           <router-link class="link" :to="{name: 'Blogs'}">Articles</router-link>
           <router-link class="link" to="#">Ecrire un article</router-link>
-          <router-link class="link" to="#"
+          <router-link class="link" :to="{name: 'Login'}"
             >Connexion/Enregistrement</router-link
           >
         </ul>
@@ -24,7 +24,7 @@
           <router-link class="link" :to="{name: 'Home'}">Accueil</router-link>
           <router-link class="link" :to="{name: 'Blogs'}">Articles</router-link>
           <router-link class="link" to="#">Ecrire un article</router-link>
-          <router-link class="link" to="#"
+          <router-link class="link" :to="{name: 'Login'}"
             >Connexion/Enregistrement</router-link
           >
         </ul>
