@@ -7,7 +7,7 @@
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p class="content-preview" v-else v-html="post.blogHTML"></p>
         <router-link class="link link-light" v-if="post.welcomeScreen" to="#">
-          Connexion/Inscription<Arrow class="arrow arrow-light" />
+          Connexion / Inscription<Arrow class="arrow arrow-light" />
         </router-link>
         <router-link
           class="link"
@@ -63,6 +63,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex: 4;
+    font-family: 'Montserrat', sans-serif;
     order: 2;
     @media (min-width: 700px) {
       order: 1;
@@ -80,7 +81,7 @@ export default {
 
       h2 {
         font-size: 32px;
-        font-weight: 300;
+        font-weight: 400;
         text-transform: uppercase;
         margin-bottom: 24px;
         @media (min-width: 700px) {
@@ -89,7 +90,8 @@ export default {
       }
 
       p {
-        font-size: 15px;
+        font-family: 'EB Garamond', serif;
+        font-size: 1.2em;
         font-weight: 300;
         line-height: 1.7;
       }

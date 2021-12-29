@@ -31,7 +31,7 @@
         </div>
         <div v-show="error" class="error">{{ this.errorMsg }}</div>
       </div>
-      <button @click.prevent="register">Connexion</button>
+      <button @click.prevent="register">Enregistrer</button>
       <div class="angle"></div>
     </form>
     <div class="background"></div>
@@ -73,7 +73,7 @@ export default {
         this.username !== ""
       ) {
         this.error = false;
-        this.errorMsg = "";
+        this.errorMsg = "Veuillez remplir tous les champs."; /* TODO : ajouter la gestion de ce genre de messages par Sweet Notif dans une version future. */
         const firebaseAuth = await firebase.auth();
         const createUser = await firebaseAuth.createUserWithEmailAndPassword(
           this.email,
@@ -91,7 +91,7 @@ export default {
         return;
       }
       this.error = true;
-      this.errorMsg = "Please fill out all the fields!";
+      this.errorMsg = "Veuillez remplir tous les champs.";
       return;
     },
   },
@@ -101,6 +101,7 @@ export default {
 <style lang="scss" scoped>
 .register {
   h2 {
+    font-family: 'Montserrat', sans-serif;
     max-width: 350px;
   }
 }

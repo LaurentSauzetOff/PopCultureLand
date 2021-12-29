@@ -12,7 +12,7 @@
           <router-link class="link" :to="{name: 'Blogs'}">Articles</router-link>
           <router-link class="link" to="#">Ecrire un article</router-link>
           <router-link class="link" :to="{name: 'Login'}"
-            >Connexion/Enregistrement</router-link
+            >Connexion / Enregistrement</router-link
           >
         </ul>
       </div>
@@ -25,7 +25,7 @@
           <router-link class="link" :to="{name: 'Blogs'}">Articles</router-link>
           <router-link class="link" to="#">Ecrire un article</router-link>
           <router-link class="link" :to="{name: 'Login'}"
-            >Connexion/Enregistrement</router-link
+            >Connexion / Inscription</router-link
           >
         </ul>
       
@@ -76,7 +76,8 @@ header {
   z-index: 99;
 
   .link {
-    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     padding: 0 8px;
     transition: 0.3s color ease;
 
@@ -88,14 +89,15 @@ header {
   nav {
     display: flex;
     padding: 25px 0;
+    font-family: 'Montserrat', sans-serif;
 
     .branding {
       display: flex;
       align-items: center;
 
       .header {
-        font-weight: 600;
-        font-size: 24px;
+        font-weight: 900;
+        font-size: 2.5em;
         color: black;
         text-decoration: none;
       }

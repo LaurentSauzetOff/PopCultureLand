@@ -14,7 +14,7 @@
             :post="post"
             v-for="(post, index) in blogPostsCards"
             :key="index"
-          />
+          />  
         </div>
       </div>
     </div>
@@ -65,7 +65,8 @@ export default {
 .blog-card-wrap {
   display: flex;
   h3 {
-    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     font-size: 28px;
     margin: 32px 0;
   }
@@ -84,7 +85,9 @@ export default {
 
     .router-button {
       display: flex;
-      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: .2em;
+      font-size: 1em;
       text-decoration: none;
       @media (min-width: 800px) {
         margin-left: auto;
@@ -92,7 +95,8 @@ export default {
     }
 
     h2 {
-      font-weight: 300;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       font-size: 32px;
       max-width: 425px;
       width: 100%;
