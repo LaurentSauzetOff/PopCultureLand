@@ -31,7 +31,7 @@
 </template>
 
 <script>
-/* import email from "../assets/Icons/envelope-regular.svg"; */
+import email from "../assets/Icons/envelope-regular.svg";
 import Modal from "../components/Modal";
 import Loading from "../components/Loading";
 import firebase from "firebase/app";
@@ -47,7 +47,7 @@ export default {
     };
   },
   components: {
-    /*email,*/
+    email,
     Modal,
     Loading,
   },
@@ -59,7 +59,7 @@ export default {
         .sendPasswordResetEmail(this.email)
         .then(() => {
           this.modalMessage =
-            "If your account exists, you will receive a email";
+            "Si votre compte existe, vous recevrez un email.";
           this.loading = false;
           this.modalActive = true;
         })

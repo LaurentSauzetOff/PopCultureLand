@@ -27,7 +27,12 @@ export default {
   },
   created() {
     this.checkRoute();
-    console.log(firebase.auth().currentUser.uid);
+    firebase.auth().onAuthStateChanged((user) => {
+      this.$store.commit("updateUser", user);
+      if (user) {
+        this.$store.dispatch("getCurrentUser");
+      }
+    });
   },
   mounted() {},
   methods: {
@@ -52,8 +57,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-
 * {
   margin: 0;
   padding: 0;
