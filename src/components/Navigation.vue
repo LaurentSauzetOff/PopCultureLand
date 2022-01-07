@@ -13,11 +13,11 @@
             >Articles</router-link
           >
           <router-link class="link" to="#">Ecrire un article</router-link>
-          <router-link class="link" :to="{ name: 'Login' }"
+          <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
             >Connexion / Enregistrement</router-link
           >
         </ul>
-        <div @click="toggleProfileMenu" class="profile" ref="profile">
+        <div v-if="user" @click="toggleProfileMenu" class="profile" ref="profile">
           <span>{{ this.$store.state.profilInitials }}</span>
           <div v-show="profileMenu" class="profile-menu">
             <div class="info">
@@ -33,13 +33,13 @@
             </div>
             <div class="options">
               <div class="option">
-                <router-link class="option" to="#">
+                <router-link class="option" :to="{name: 'Profile'}">
                   <userIcon class="icon" />
                   <p>Profil</p>
                 </router-link>
               </div>
               <div class="option">
-                <router-link class="option" to="#">
+                <router-link class="option" :to="{name: 'Admin'}">
                   <adminIcon class="icon" />
                   <p>Admin</p>
                 </router-link>
@@ -61,7 +61,7 @@
         <router-link class="link" :to="{ name: 'Home' }">Accueil</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Articles</router-link>
         <router-link class="link" to="#">Ecrire un article</router-link>
-        <router-link class="link" :to="{ name: 'Login' }"
+        <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
           >Connexion / Inscription</router-link
         >
       </ul>
@@ -115,6 +115,11 @@ export default {
       window.location.reload()
     }
   },
+  computed: {
+    user(){
+      return this.$store.state.user
+    }
+  }
 };
 </script>
 

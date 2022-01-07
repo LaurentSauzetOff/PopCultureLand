@@ -5,6 +5,8 @@ import Blogs from "../views/Blogs.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
+import Profile from "../views/Profile.vue";
+import Admin from "../views/Admin.vue";
 
 Vue.use(VueRouter);
 
@@ -14,40 +16,59 @@ const routes = [
     name: "Home",
     component: Home,
     meta: {
-      title: 'Accueil'
-    }
+      title: "Accueil",
+    },
   },
   {
     path: "/blogs",
     name: "Blogs",
     component: Blogs,
     meta: {
-      title: 'Articles'
-    }
+      title: "Articles",
+    },
   },
   {
     path: "/login",
     name: "Login",
     component: Login,
     meta: {
-      title: 'Connexion'
-    }
+      title: "Connexion",
+    },
   },
   {
     path: "/register",
     name: "Register",
     component: Register,
     meta: {
-      title: 'Enregistrement'
-    }
+      title: "Enregistrement",
+    },
   },
   {
     path: "/forgot-password",
     name: "ForgotPassword",
     component: ForgotPassword,
     meta: {
-      title: 'Mot de passe perdu'
-    }
+      title: "Mot de passe perdu",
+    },
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+    meta: {
+      title: "Profile",
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: Admin,
+    meta: {
+      title: "Admin",
+      requiresAuth: true,
+      requiresAdmin: true,
+    },
   },
 ];
 
@@ -60,6 +81,6 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   document.title = `${to.meta.title} | PopCUltureLand`;
   next();
-})
+});
 
 export default router;
