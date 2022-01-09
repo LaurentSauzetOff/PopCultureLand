@@ -1,5 +1,7 @@
 <template>
   <div class="create-post">
+    <blog-cover-preview v-show="this.$store.state.blogPhotoPreview" />
+    <loading v-show="loading" />
     <div class="container">
       <div :class="{ invisible: !error }" class="err-message">
         <p><span>Erreur : </span>{{ this.errorMsg }}</p>
@@ -22,6 +24,7 @@
           <button
             class="preview"
             :class="{ 'button-inactive': !this.$store.state.blogPhotoFileURL }"
+            @click="openPreview"
           >
             Aperçu de la photo
           </button>
