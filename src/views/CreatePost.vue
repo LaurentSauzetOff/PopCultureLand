@@ -100,6 +100,7 @@ export default {
           const downloadURL = await docRef.getDownloadURL();
           Editor.insertEmbed(cursorLocation, "image", downloadURL);
           resetUploader();
+          console.log
         }
       );
     },
