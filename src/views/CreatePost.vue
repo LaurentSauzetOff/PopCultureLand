@@ -40,7 +40,7 @@
         />
       </div>
       <div class="blog-actions">
-        <button>Publier</button>
+        <button @click="uploadBlog">Publier</button>
         <router-link class="router-button" :to="{name: 'BlogPreview'}"
           >Prévisualiser l'article</router-link
         >
@@ -144,14 +144,14 @@ export default {
           return;
         }
         this.error = true;
-        this.errorMsg = "Please ensure you uploaded a cover photo!";
+        this.errorMsg = "Veuillez vous assurer que vous avez uploadé une photo de couverture !";
         setTimeout(() => {
           this.error = false;
         }, 5000);
         return;
       }
       this.error = true;
-      this.errorMsg = "Please ensure Blog Title & Blog Post has been filled!";
+      this.errorMsg = "Veuillez vous assurer que le titre du blog et l'article de blog ont été remplis !";
       setTimeout(() => {
         this.error = false;
       }, 5000);

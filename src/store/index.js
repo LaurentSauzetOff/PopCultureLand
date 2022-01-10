@@ -10,7 +10,7 @@ export default new Vuex.Store({
   state: {
     blogPosts: [],
     postLoaded: null,
-    blogHTML: "Ecrivez votre titre ici...",
+    blogHTML: "Write your blog title here...",
     blogTitle: "",
     blogPhotoName: "",
     blogPhotoFileURL: null,
@@ -104,7 +104,6 @@ export default new Vuex.Store({
       const token = await user.getIdTokenResult();
       const admin = await token.claims.admin;
       commit("setProfileAdmin", admin);
-      
     },
     async getPost({ state }) {
       const dataBase = await db.collection("blogPosts").orderBy("date", "desc");
