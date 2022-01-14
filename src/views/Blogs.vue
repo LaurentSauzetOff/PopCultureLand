@@ -50,7 +50,7 @@ export default {
       position: relative;
       border: none;
       -webkit-appearance: none;
-      background: #fff;
+      background: lightgray;
       outline: none;
       width: 80px;
       height: 30px;
