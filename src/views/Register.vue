@@ -3,11 +3,9 @@
     <form class="register">
       <p class="login-register">
         Vous avez déjà un compte ?
-        <router-link class="router-link" :to="{ name: 'Login' }"
-          >Connexion</router-link
-        >
+        <router-link class="router-link" :to="{ name: 'Login' }">Login</router-link>
       </p>
-      <h2>Créer votre compte</h2>
+      <h2>Créez votre compte gratuitement !</h2>
       <div class="inputs">
         <div class="input">
           <input type="text" placeholder="Prénom" v-model="firstName" />
@@ -18,7 +16,7 @@
           <user class="icon" />
         </div>
         <div class="input">
-          <input type="text" placeholder="Nom d'utilisateur" v-model="username" />
+          <input type="text" placeholder="Username" v-model="username" />
           <user class="icon" />
         </div>
         <div class="input">
@@ -31,7 +29,7 @@
         </div>
         <div v-show="error" class="error">{{ this.errorMsg }}</div>
       </div>
-      <button @click.prevent="register">Enregistrer</button>
+      <button @click.prevent="register">Créer</button>
       <div class="angle"></div>
     </form>
     <div class="background"></div>
@@ -73,12 +71,9 @@ export default {
         this.username !== ""
       ) {
         this.error = false;
-        this.errorMsg = "Veuillez remplir tous les champs."; /* TODO : ajouter la gestion de ce genre de messages par Sweet Notif dans une version future. */
+        this.errorMsg = "";
         const firebaseAuth = await firebase.auth();
-        const createUser = await firebaseAuth.createUserWithEmailAndPassword(
-          this.email,
-          this.password
-        );
+        const createUser = await firebaseAuth.createUserWithEmailAndPassword(this.email, this.password);
         const result = await createUser;
         const dataBase = db.collection("users").doc(result.user.uid);
         await dataBase.set({
@@ -91,7 +86,7 @@ export default {
         return;
       }
       this.error = true;
-      this.errorMsg = "Veuillez remplir tous les champs.";
+      this.errorMsg = "Please fill out all the fields!";
       return;
     },
   },
@@ -101,7 +96,6 @@ export default {
 <style lang="scss" scoped>
 .register {
   h2 {
-    font-family: 'Montserrat', sans-serif;
     max-width: 350px;
   }
 }

@@ -3,17 +3,12 @@
     <div class="container">
       <h2>Administration</h2>
       <div class="admin-info">
-        <h2>Add Admin</h2>
+        <h2>Ajouter un admin</h2>
         <div class="input">
-          <input
-            placeholder="Enter user email to make them an admin"
-            type="text"
-            id="addAdmins"
-            v-model="adminEmail"
-          />
+          <input placeholder="Enter user email to make them an admin" type="text" id="addAdmins" v-model="adminEmail" />
         </div>
         <span>{{ this.functionMsg }}</span>
-        <button @click="addAdmin" class="button">Submit</button>
+        <button @click="addAdmin" class="button">Envoyer</button>
       </div>
     </div>
   </div>
@@ -55,8 +50,7 @@ export default {
 
     .admin-info {
       border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       padding: 32px;
       background-color: #f1f1f1;
       display: flex;

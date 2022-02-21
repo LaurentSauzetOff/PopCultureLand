@@ -10,9 +10,10 @@ export default new Vuex.Store({
   state: {
     blogPosts: [],
     postLoaded: null,
-    blogHTML: "Write your blog title here...",
+    blogHTML: "Ecrivez votre texte...",
     blogTitle: "",
     blogPhotoName: "",
+    blogAuthor: '',
     blogPhotoFileURL: null,
     blogPhotoPreview: null,
     editPost: null,
@@ -40,6 +41,9 @@ export default new Vuex.Store({
     updateBlogTitle(state, payload) {
       state.blogTitle = payload;
     },
+    updateBlogAuthor(state, payload) {
+      state.blogAuthor = payload
+    },
     fileNameChange(state, payload) {
       state.blogPhotoName = payload;
     },
@@ -59,16 +63,14 @@ export default new Vuex.Store({
       state.blogPhotoName = payload.blogCoverPhotoName;
     },
     filterBlogPost(state, payload) {
-      state.blogPosts = state.blogPosts.filter(
-        (post) => post.blogID !== payload
-      );
+      state.blogPosts = state.blogPosts.filter((post) => post.blogID !== payload);
     },
     updateUser(state, payload) {
       state.user = payload;
     },
     setProfileAdmin(state, payload) {
       state.profileAdmin = payload;
-      console.log(state.profileAdmin);
+   /*    console.log(state.profileAdmin); */
     },
     setProfileInfo(state, doc) {
       state.profileId = doc.id;
@@ -76,12 +78,11 @@ export default new Vuex.Store({
       state.profileFirstName = doc.data().firstName;
       state.profileLastName = doc.data().lastName;
       state.profileUsername = doc.data().username;
-      console.log(state.profileId);
+  /*     console.log(state.profileId); */
     },
     setProfileInitials(state) {
       state.profileInitials =
-        state.profileFirstName.match(/(\b\S)?/g).join("") +
-        state.profileLastName.match(/(\b\S)?/g).join("");
+        state.profileFirstName.match(/(\b\S)?/g).join("") + state.profileLastName.match(/(\b\S)?/g).join("");
     },
     changeFirstName(state, payload) {
       state.profileFirstName = payload;
@@ -95,9 +96,7 @@ export default new Vuex.Store({
   },
   actions: {
     async getCurrentUser({ commit }, user) {
-      const dataBase = await db
-        .collection("users")
-        .doc(firebase.auth().currentUser.uid);
+      const dataBase = await db.collection("users").doc(firebase.auth().currentUser.uid);
       const dbResults = await dataBase.get();
       commit("setProfileInfo", dbResults);
       commit("setProfileInitials");

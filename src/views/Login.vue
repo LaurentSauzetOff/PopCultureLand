@@ -3,26 +3,24 @@
     <form class="login">
       <p class="login-register">
         Vous n'avez pas de compte ?
-        <router-link class="router-link" :to="{ name: 'Register' }"
-          >Créer votre compte</router-link
-        >
+        <router-link class="router-link" :to="{ name: 'Register' }">Créer son compte gratuitement</router-link>
       </p>
-      <h2>Connexion à  PopCultureLand</h2>
+      <h2>Se connecter sur PopCultureLand</h2>
       <div class="inputs">
         <div class="input">
           <input type="text" placeholder="Email" v-model="email" />
           <email class="icon" />
         </div>
         <div class="input">
-          <input type="password" placeholder="Mot de passe" v-model="password" />
+          <input type="password" placeholder="Password" v-model="password" />
           <password class="icon" />
         </div>
         <div v-show="error" class="error">{{ this.errorMsg }}</div>
       </div>
       <router-link class="forgot-password" :to="{ name: 'ForgotPassword' }"
-        >Mot de passe perdu ?</router-link
+        >Vous avez perdu votre mot de passe ?</router-link
       >
-      <button @click.prevent="signIn">Connexion</button>
+      <button @click.prevent="signIn">Connectez-vous</button>
       <div class="angle"></div>
     </form>
     <div class="background"></div>
@@ -57,6 +55,7 @@ export default {
           this.$router.push({ name: "Home" });
           this.error = false;
           this.errorMsg = "";
+         /*  console.log(firebase.auth().currentUser.uid); */
         })
         .catch((err) => {
           this.error = true;

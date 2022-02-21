@@ -37,6 +37,7 @@ export default {
   align-items: center;
   height: 100%;
   width: 100%;
+
   .modal-content {
     display: flex;
     justify-content: center;
@@ -46,8 +47,8 @@ export default {
     height: 400px;
     width: 600px;
     padding: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
     .icon {
       width: 24px;
       height: auto;
@@ -58,13 +59,13 @@ export default {
       right: 15px;
       color: #303030;
     }
+
     img {
       margin-top: 16px;
       display: block;
       width: auto;
       height: 100%;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
   }
 }

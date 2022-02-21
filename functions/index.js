@@ -13,16 +13,10 @@ exports.addAdminRole = functions.https.onCall((data, context) => {
     })
     .then(() => {
       return {
-        message: `Succès ! ${data.email} est désormais un administrateur !`,
+        message: `Success! ${data.email} has been made an admin!!`,
       };
-    }).catch((err) => {
-        console.log(err)
+    })
+    .catch((err) => {
+      console.log(err);
     });
 });
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });

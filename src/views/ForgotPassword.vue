@@ -1,28 +1,22 @@
 <template>
   <div class="reset-password">
-    <Modal
-      v-if="modalActive"
-      :modalMessage="modalMessage"
-      v-on:close-modal="closeModal"
-    />
-    <Loading v-if="loading"  />
+    <Modal v-if="modalActive" :modalMessage="modalMessage" v-on:close-modal="closeModal" />
+    <Loading v-if="loading" />
     <div class="form-wrap">
       <form class="reset">
         <p class="login-register">
-          Revenir à 
-          <router-link class="router-link" :to="{ name: 'Login' }"
-            >Connexion</router-link
-          >
+          Revenir à
+          <router-link class="router-link" :to="{ name: 'Login' }">Se connecter</router-link>
         </p>
         <h2>Redéfinir le mot de passe</h2>
-        <p>Mot de passe oublié ? Entrez votre email pour le réinitialiser !</p>
+        <p>Vous avez perdu votre mot de passe ? Entrez votre email pour le redéfinir.</p>
         <div class="inputs">
           <div class="input">
             <input type="text" placeholder="Email" v-model="email" />
             <email class="icon" />
           </div>
         </div>
-        <button @click.prevent="resetPassword">Réinitialiser le mot de passe</button>
+        <button @click.prevent="resetPassword">Redéfinir</button>
         <div class="angle"></div>
       </form>
       <div class="background"></div>
@@ -58,8 +52,7 @@ export default {
         .auth()
         .sendPasswordResetEmail(this.email)
         .then(() => {
-          this.modalMessage =
-            "Si votre compte existe, vous recevrez un email.";
+          this.modalMessage = "If your account exists, you will receive a email";
           this.loading = false;
           this.modalActive = true;
         })

@@ -11,15 +11,9 @@
     <img :src="post.blogCoverPhoto" alt="" />
     <div class="info">
       <h4>{{ post.blogTitle }}</h4>
-      <h6>
-        Posté le :
-        {{ new Date(post.blogDate).toLocaleString("en-us", { dateStyle: "long" }) }}
-      </h6>
-      <router-link
-        class="link"
-        :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
-      >
-        Voir l'article <Arrow class="arrow" />
+      <h6>Posté le {{ new Date(post.blogDate).toLocaleString("fr-fr", { dateStyle: "long" }) }}</h6>
+      <router-link class="link" :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }">
+        Lire l'article... <Arrow class="arrow" />
       </router-link>
     </div>
   </div>
@@ -66,8 +60,7 @@ export default {
 
   &:hover {
     transform: rotateZ(-1deg) scale(1.01);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .icons {
