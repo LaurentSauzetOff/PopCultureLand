@@ -8,22 +8,30 @@
           >
           <ul>
             <li>
-              <a href="#"><youTube class="svg-icon"/></a>
+              <a
+                href="https://www.youtube.com/channel/UCryI38YV_aFEIxRN_xW3c2A"
+                target="_blank"
+                ><youTube class="svg-icon"
+              /></a>
             </li>
             <li>
-              <a href="#"><twitter class="svg-icon"/></a>
+              <a href="https://www.twitch.tv/popcultureland" target="_blank"
+                ><twitch class="svg-icon"
+              /></a>
             </li>
             <li>
-              <a href="#"><instagram class="svg-icon"/></a>
+              <a href="https://www.instagram.com/laurent_sauzet_dev/" target="_blank"><instagram class="svg-icon"/></a>
             </li>
             <li>
-              <a href="#"><linkedin class="svg-icon"/></a>
+              <a href="https://www.linkedin.com/in/laurent-sauzet/" target="_blank"><linkedin class="svg-icon"/></a>
             </li>
           </ul>
         </div>
         <div class="col-2">
           <ul>
-            <router-link class="link" :to="{ name: 'Home' }">Accueil</router-link>
+            <router-link class="link" :to="{ name: 'Home' }"
+              >Accueil</router-link
+            >
             <router-link class="link" :to="{ name: 'Blogs' }"
               >Articles</router-link
             >
@@ -31,13 +39,13 @@
               >Ecrire un article</router-link
             >
             <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
-              >Connexion / Enregistrement</router-link
+              >S'enregistrer / se connecter</router-link
             >
           </ul>
         </div>
       </div>
       <div class="right">
-        <p>Copyright 2021 Tous droits réservés.</p>
+        <p>Copyright Laurent Sauzet 2022. Tout droits réservés.</p>
       </div>
     </div>
   </footer>
@@ -45,14 +53,14 @@
 
 <script>
 import youTube from "../assets/Icons/youtube-brands.svg";
-import twitter from "../assets/Icons/twitter-brands.svg";
+import twitch from "../assets/Icons/twitch.svg";
 import instagram from "../assets/Icons/instagram-brands.svg";
 import linkedin from "../assets/Icons/linkedin-brands.svg";
 export default {
   name: "footer-vue",
   components: {
     youTube,
-    twitter,
+    twitch,
     instagram,
     linkedin,
   },
@@ -68,10 +76,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 footer {
   margin-top: auto;
   padding: 100px 25px;
   background-color: #303030;
+
   .container {
     display: flex;
     flex-direction: column;
