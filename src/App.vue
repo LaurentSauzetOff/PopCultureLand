@@ -74,7 +74,7 @@ export default {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  color: green;
 }
 
 .link-light {
@@ -85,7 +85,7 @@ export default {
   margin-left: 8px;
   width: 12px;
   path {
-    fill: #000;
+    fill: green;
   }
 }
 .arrow-light {
