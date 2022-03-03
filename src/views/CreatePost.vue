@@ -2,12 +2,19 @@
   <div class="create-post">
     <BlogCoverPreview v-show="this.$store.state.blogPhotoPreview" />
     <Loading v-show="loading" />
+    <v-btn icon style="background-color: white" x-large @click="goBack"
+      ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
+    >
     <div class="container">
       <div :class="{ invisible: !error }" class="err-message">
         <p><span>Erreur :</span>{{ this.errorMsg }}</p>
       </div>
       <div class="blog-info">
-        <input type="text" placeholder="Entrez le titre de votre article" v-model="blogTitle" />
+        <input
+          type="text"
+          placeholder="Entrez le titre de votre article"
+          v-model="blogTitle"
+        />
         <div class="upload-file">
           <label for="blog-photo">Uploader image de couverture</label>
           <input
@@ -37,7 +44,7 @@
       </div>
       <div class="signature">
         <label for="signatureAuthor">Auteur</label>
-        <input type="text" name="signatureAuthor" v-model="blogAuthor">
+        <input type="text" name="signatureAuthor" v-model="blogAuthor" />
       </div>
       <div class="blog-actions">
         <button @click="uploadBlog">Publier</button>
@@ -112,7 +119,7 @@ export default {
     uploadBlog() {
       if (this.blogTitle.length !== 0 && this.blogHTML.length !== 0) {
         if (this.file) {
-          console.log('test du user', this.$store.state.user)
+          console.log("test du user", this.$store.state.user);
           this.loading = true;
           const storageRef = firebase.storage().ref();
           const docRef = storageRef.child(
@@ -166,6 +173,9 @@ export default {
       }, 5000);
       return;
     },
+    goBack() {
+      this.$router.go(-1);
+    },
   },
   computed: {
     user() {
@@ -193,8 +203,8 @@ export default {
         return this.$store.state.blogAuthor;
       },
       set(payload) {
-        this.$store.commit('updateBlogAuthor', payload)
-      }
+        this.$store.commit("updateBlogAuthor", payload);
+      },
     },
     blogHTML: {
       get() {
@@ -208,7 +218,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 .create-post {
   position: relative;
   height: 100%;
@@ -279,16 +289,14 @@ export default {
     }
 
     input::placeholder {
-        font-size: 16px;
-      }
+      font-size: 16px;
+    }
 
     input {
       transition: 0.5s ease-in-out all;
       padding: 10px 4px;
       border: none;
       border-bottom: 1px solid #303030;
-
-      
 
       &:focus {
         outline: none;

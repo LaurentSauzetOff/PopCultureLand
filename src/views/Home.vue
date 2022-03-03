@@ -1,7 +1,6 @@
 <template>
   <main class="home">
     <section>
-      <BlogPost v-if="!user" :post="welcomeScreen" />
       <BlogPost
         :post="post"
         v-for="(post, index) in blogPostsFeed"

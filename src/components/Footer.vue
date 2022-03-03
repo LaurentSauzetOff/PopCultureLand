@@ -20,10 +20,18 @@
               /></a>
             </li>
             <li>
-              <a href="https://www.instagram.com/laurent_sauzet_dev/" target="_blank"><instagram class="svg-icon"/></a>
+              <a
+                href="https://www.instagram.com/laurent_sauzet_dev/"
+                target="_blank"
+                ><instagram class="svg-icon"
+              /></a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/laurent-sauzet/" target="_blank"><linkedin class="svg-icon"/></a>
+              <a
+                href="https://www.linkedin.com/in/laurent-sauzet/"
+                target="_blank"
+                ><linkedin class="svg-icon"
+              /></a>
             </li>
           </ul>
         </div>
@@ -45,7 +53,10 @@
         </div>
       </div>
       <div class="right">
-        <p>Copyright Laurent Sauzet 2022. Tout droits réservés.</p>
+        <p>
+          {{ new Date().getFullYear() }} Copyright ©– Laurent Sauzet. Tout
+          droits réservés.
+        </p>
       </div>
     </div>
   </footer>
@@ -76,7 +87,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 footer {
   margin-top: auto;
   padding: 100px 25px;

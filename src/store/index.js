@@ -31,7 +31,7 @@ export default new Vuex.Store({
       return state.blogPosts.slice(0, 2);
     },
     blogPostsCards(state) {
-      return state.blogPosts.slice(2, 6);
+      return state.blogPosts.slice(0, 6);
     },
   },
   mutations: {
@@ -70,7 +70,7 @@ export default new Vuex.Store({
     },
     setProfileAdmin(state, payload) {
       state.profileAdmin = payload;
-   /*    console.log(state.profileAdmin); */
+      /*    console.log(state.profileAdmin); */
     },
     setProfileInfo(state, doc) {
       state.profileId = doc.id;
@@ -78,7 +78,7 @@ export default new Vuex.Store({
       state.profileFirstName = doc.data().firstName;
       state.profileLastName = doc.data().lastName;
       state.profileUsername = doc.data().username;
-  /*     console.log(state.profileId); */
+      /*     console.log(state.profileId); */
     },
     setProfileInitials(state) {
       state.profileInitials =
@@ -95,7 +95,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async getCurrentUser({ commit }, user) {
+    async getCurrentUser({
+      commit
+    }, user) {
       const dataBase = await db.collection("users").doc(firebase.auth().currentUser.uid);
       const dbResults = await dataBase.get();
       commit("setProfileInfo", dbResults);
@@ -104,7 +106,9 @@ export default new Vuex.Store({
       const admin = await token.claims.admin;
       commit("setProfileAdmin", admin);
     },
-    async getPost({ state }) {
+    async getPost({
+      state
+    }) {
       const dataBase = await db.collection("blogPosts").orderBy("date", "desc");
       const dbResults = await dataBase.get();
       dbResults.forEach((doc) => {
@@ -122,16 +126,24 @@ export default new Vuex.Store({
       });
       state.postLoaded = true;
     },
-    async updatePost({ commit, dispatch }, payload) {
+    async updatePost({
+      commit,
+      dispatch
+    }, payload) {
       commit("filterBlogPost", payload);
       await dispatch("getPost");
     },
-    async deletePost({ commit }, payload) {
+    async deletePost({
+      commit
+    }, payload) {
       const getPost = await db.collection("blogPosts").doc(payload);
       await getPost.delete();
       commit("filterBlogPost", payload);
     },
-    async updateUserSettings({ commit, state }) {
+    async updateUserSettings({
+      commit,
+      state
+    }) {
       const dataBase = await db.collection("users").doc(state.profileId);
       await dataBase.update({
         firstName: state.profileFirstName,
