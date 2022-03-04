@@ -68,6 +68,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
   }
   h4 {
     font-weight: 400;
