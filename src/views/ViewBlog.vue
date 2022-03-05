@@ -1,7 +1,7 @@
 <template>
   <main class="post-view" v-if="currentBlog">
-    <v-btn icon x-large @click="goBack"
-      ><v-icon x-large>mdi-arrow-left</v-icon></v-btn
+    <v-btn icon style="background-color: white" x-large @click="goBack"
+      ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
     >
     <div class="container quillWrapper">
       <h1>{{ this.currentBlog[0].blogTitle }}</h1>
@@ -66,6 +66,7 @@ export default {
   .container {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;

@@ -5,8 +5,8 @@
       :modalMessage="modalMessage"
       v-on:close-modal="closeModal"
     />
-    <v-btn icon x-large @click="goBack"
-      ><v-icon x-large>mdi-arrow-left</v-icon></v-btn
+    <v-btn icon style="background-color: white" x-large @click="goBack"
+      ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
     >
     <div class="container">
       <h2>Paramètres du compte</h2>
