@@ -78,6 +78,7 @@ export default {
 
 <style lang="scss" >
 .post-view {
+ john/vuetify/branch
   .container {
     display: flex;
     flex-direction: column;
@@ -85,6 +86,14 @@ export default {
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
   }
   h4 {
     font-weight: 400;
