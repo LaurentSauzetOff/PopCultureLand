@@ -63,7 +63,6 @@ export default {
 
 <style lang="scss">
 .post-view {
- john/vuetify/branch
   .container {
     display: flex;
     flex-direction: column;
@@ -72,36 +71,35 @@ export default {
     align-items: center;
     box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
 
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h4 {
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    img {
+      height: 250px;
+      object-fit: contain;
+      max-height: 250px;
+    }
+  }
+  .post-content {
+    p::first-letter {
+      color: blue;
+      font-size: 400%;
+      font-weight: 900;
+    }
+  }
 
+  .author {
+    margin: 30px 0;
+    font-style: italic;
   }
-  h4 {
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-
-  img {
-    height: 250px;
-    object-fit: contain;
-    max-height: 250px;
-  }
-}
-.post-content {
-  p::first-letter {
-    color: blue;
-    font-size: 400%;
-    font-weight: 900;
-  }
-}
-
-.author {
-  margin: 30px 0;
-  font-style: italic;
 }
 </style>
