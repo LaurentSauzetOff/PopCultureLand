@@ -16,8 +16,7 @@ import "firebase/auth";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "Home",
     component: Home,
@@ -127,7 +126,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   scrollBehavior() {
-    return { x: 0, y: 0 };
+    return {
+      x: 0,
+      y: 0
+    };
   },
 });
 
@@ -149,11 +151,15 @@ router.beforeEach(async (to, from, next) => {
         if (admin) {
           return next();
         }
-        return next({ name: "Home" });
+        return next({
+          name: "Home"
+        });
       }
       return next();
     }
-    return next({ name: "Home" });
+    return next({
+      name: "Home"
+    });
   }
   return next();
 });

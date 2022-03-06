@@ -1,7 +1,7 @@
 <template>
   <main class="home">
     <section>
-      
+
       <BlogPost
         :post="post"
         v-for="(post, index) in blogPostsFeed"

@@ -2,8 +2,18 @@
   <header>
     <nav class="container">
       <div class="branding">
+        <v-img
+          src="@/assets/P.png"
+          width="70"
+          style="margin-right: 10px"
+        ></v-img>
         <router-link class="header" :to="{ name: 'Home' }"
+
+          >PopCultureLand
+          <p id="beta">bêta 00.01</p></router-link
+
           >PopCultureLand <p id="beta">bêta 00.01</p></router-link
+
         >
       </div>
       <div class="nav-links">
@@ -161,9 +171,11 @@ header {
     }
   }
 
-    #beta {
-      font-size: 12;
-    }
+
+  #beta {
+    font-size: 12;
+  }
+
   nav {
     display: flex;
     padding: 25px 0;

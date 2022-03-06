@@ -1,9 +1,14 @@
 <template>
   <div class="form-wrap">
+    <v-btn icon style="background-color: white" x-large @click="goBack"
+      ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
+    >
     <form class="login">
       <p class="login-register">
         Vous n'avez pas de compte ?
-        <router-link class="router-link" :to="{ name: 'Register' }">Créer son compte gratuitement</router-link>
+        <router-link class="router-link" :to="{ name: 'Register' }"
+          >Créer son compte gratuitement</router-link
+        >
       </p>
       <h2>Se connecter sur PopCultureLand</h2>
       <div class="inputs">
@@ -55,12 +60,15 @@ export default {
           this.$router.push({ name: "Home" });
           this.error = false;
           this.errorMsg = "";
-         /*  console.log(firebase.auth().currentUser.uid); */
+          /*  console.log(firebase.auth().currentUser.uid); */
         })
         .catch((err) => {
           this.error = true;
           this.errorMsg = err.message;
         });
+    },
+    goBack() {
+      this.$router.go(-1);
     },
   },
 };
@@ -171,7 +179,7 @@ export default {
     display: none;
     flex: 2;
     background-size: cover;
-    background-image: url("../assets/background.png");
+    background-image: url("../assets/background1.png");
     width: 100%;
     height: 100%;
     @media (min-width: 900px) {

@@ -1,9 +1,14 @@
 <template>
   <div class="form-wrap">
+    <v-btn icon style="background-color: white" x-large @click="goBack"
+      ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
+    >
     <form class="register">
       <p class="login-register">
         Vous avez déjà un compte ?
-        <router-link class="router-link" :to="{ name: 'Login' }">Login</router-link>
+        <router-link class="router-link" :to="{ name: 'Login' }"
+          >Login</router-link
+        >
       </p>
       <h2>Créez votre compte gratuitement !</h2>
       <div class="inputs">
@@ -24,7 +29,11 @@
           <email class="icon" />
         </div>
         <div class="input">
-          <input type="password" placeholder="Mot de passe" v-model="password" />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            v-model="password"
+          />
           <password class="icon" />
         </div>
         <div v-show="error" class="error">{{ this.errorMsg }}</div>
@@ -73,7 +82,10 @@ export default {
         this.error = false;
         this.errorMsg = "";
         const firebaseAuth = await firebase.auth();
-        const createUser = await firebaseAuth.createUserWithEmailAndPassword(this.email, this.password);
+        const createUser = await firebaseAuth.createUserWithEmailAndPassword(
+          this.email,
+          this.password
+        );
         const result = await createUser;
         const dataBase = db.collection("users").doc(result.user.uid);
         await dataBase.set({
@@ -88,6 +100,9 @@ export default {
       this.error = true;
       this.errorMsg = "Please fill out all the fields!";
       return;
+    },
+    goBack() {
+      this.$router.go(-1);
     },
   },
 };

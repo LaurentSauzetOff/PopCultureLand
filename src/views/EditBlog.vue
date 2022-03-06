@@ -1,5 +1,8 @@
 <template>
   <div class="create-post">
+    <v-btn icon style="background-color: white" x-large @click="goBack"
+      ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
+    >
     <BlogCoverPreview v-show="this.$store.state.blogPhotoPreview" />
     <Loading v-show="loading" />
     <div class="container">
@@ -7,22 +10,43 @@
         <p><span>Erreur :</span>{{ this.errorMsg }}</p>
       </div>
       <div class="blog-info">
-        <input type="text" placeholder="Entrez le titre de votre article" v-model="blogTitle" />
+        <input
+          type="text"
+          placeholder="Entrez le titre de votre article"
+          v-model="blogTitle"
+        />
         <div class="upload-file">
           <label for="blog-photo">Uploader une photo de couverture</label>
-          <input type="file" ref="blogPhoto" id="blog-photo" @change="fileChange" accept=".png, .jpg, ,jpeg" />
-          <button @click="openPreview" class="preview" :class="{ 'button-inactive': !this.$store.state.blogPhotoFileURL }">
+          <input
+            type="file"
+            ref="blogPhoto"
+            id="blog-photo"
+            @change="fileChange"
+            accept=".png, .jpg, ,jpeg"
+          />
+          <button
+            @click="openPreview"
+            class="preview"
+            :class="{ 'button-inactive': !this.$store.state.blogPhotoFileURL }"
+          >
             Prévisualiser la photo
           </button>
           <span>Fichier choisit : {{ this.$store.state.blogPhotoName }}</span>
         </div>
       </div>
       <div class="editor">
-        <vue-editor :editorOptions="editorSettings" v-model="blogHTML" useCustomImageHandler @image-added="imageHandler" />
+        <vue-editor
+          :editorOptions="editorSettings"
+          v-model="blogHTML"
+          useCustomImageHandler
+          @image-added="imageHandler"
+        />
       </div>
       <div class="blog-actions">
         <button @click="updateBlog">Enregistrer les modifications</button>
-        <router-link class="router-button" :to="{ name: 'BlogPreview' }">Prévisualiser les changements</router-link>
+        <router-link class="router-button" :to="{ name: 'BlogPreview' }"
+          >Prévisualiser les changements</router-link
+        >
       </div>
     </div>
   </div>
@@ -103,7 +127,9 @@ export default {
         if (this.file) {
           this.loading = true;
           const storageRef = firebase.storage().ref();
-          const docRef = storageRef.child(`documents/BlogCoverPhotos/${this.$store.state.blogPhotoName}`);
+          const docRef = storageRef.child(
+            `documents/BlogCoverPhotos/${this.$store.state.blogPhotoName}`
+          );
           docRef.put(this.file).on(
             "state_changed",
             (snapshot) => {
@@ -124,7 +150,10 @@ export default {
               });
               await this.$store.dispatch("updatePost", this.routeID);
               this.loading = false;
-              this.$router.push({ name: "ViewBlog", params: { blogid: dataBase.id } });
+              this.$router.push({
+                name: "ViewBlog",
+                params: { blogid: dataBase.id },
+              });
             }
           );
           return;
@@ -136,7 +165,10 @@ export default {
         });
         await this.$store.dispatch("updatePost", this.routeID);
         this.loading = false;
-        this.$router.push({ name: "ViewBlog", params: { blogid: dataBase.id } });
+        this.$router.push({
+          name: "ViewBlog",
+          params: { blogid: dataBase.id },
+        });
         return;
       }
       this.error = true;
@@ -145,6 +177,9 @@ export default {
         this.error = false;
       }, 5000);
       return;
+    },
+    goBack() {
+      this.$router.go(-1);
     },
   },
   computed: {
@@ -185,6 +220,10 @@ export default {
 
   .router-button {
     text-decoration: none;
+    color: #fff;
+  }
+
+  .icon {
     color: #fff;
   }
 

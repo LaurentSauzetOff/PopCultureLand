@@ -3,6 +3,11 @@
     <div class="container">
       <div class="left">
         <div class="col-1">
+          <v-img
+            src="@/assets/P.png"
+            width="50"
+            style="margin-right: auto"
+          ></v-img>
           <router-link class="header" :to="{ name: 'Home' }"
             >PopCultureLand</router-link
           >
@@ -32,6 +37,7 @@
                 target="_blank"
                 ><linkedin class="svg-icon"
               /></a>
+
             </li>
             <li>
               <a href="https://www.buymeacoffee.com/laurentsauU" target="_blank"
@@ -143,6 +149,7 @@
                   class="svg-icon"
                   id="utip"
               /></a>
+
             </li>
           </ul>
         </div>
@@ -164,7 +171,10 @@
         </div>
       </div>
       <div class="right">
-        <p>Copyright Laurent Sauzet 2022. Tout droits réservés.</p>
+        <p>
+          {{ new Date().getFullYear() }} Copyright ©– Laurent Sauzet. Tout
+          droits réservés.
+        </p>
       </div>
     </div>
   </footer>
