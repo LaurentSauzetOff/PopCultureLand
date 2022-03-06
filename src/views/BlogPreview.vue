@@ -32,6 +32,10 @@ export default {
   .container {
     max-width: 1000px;
     padding: 60px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .ql-editor {

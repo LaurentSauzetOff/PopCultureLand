@@ -56,6 +56,13 @@ export default {
 <style lang="scss">
 
 .post-view {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   h4 {
     font-weight: 400;
     font-size: 14px;

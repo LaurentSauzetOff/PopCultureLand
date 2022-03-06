@@ -3,7 +3,7 @@
     <nav class="container">
       <div class="branding">
         <router-link class="header" :to="{ name: 'Home' }"
-          >PopCultureLand</router-link
+          >PopCultureLand <p id="beta">bêta 00.01</p></router-link
         >
       </div>
       <div class="nav-links">
@@ -161,6 +161,9 @@ header {
     }
   }
 
+    #beta {
+      font-size: 12;
+    }
   nav {
     display: flex;
     padding: 25px 0;
