@@ -9,7 +9,7 @@
         ></v-img>
         <router-link class="header" :to="{ name: 'Home' }"
           >PopCultureLand
-          <p id="beta">bêta 00.01</p></router-link
+          <p id="beta">bêta 00.02</p></router-link
         >
       </div>
       <div class="nav-links">

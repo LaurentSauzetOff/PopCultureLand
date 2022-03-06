@@ -26,20 +26,6 @@
           {{ this.$store.state.profileFirstName }}
         </p>
       </div>
-      <!-- attente des retour client pour deployé les like/dislike -->
-      <!-- <div>
-        <h6>Votre avis sur cet article :</h6>
-        <v-btn class="like" icon style="background-color: white" x-large
-          ><v-icon x-large style="color: skyblue"
-            >mdi-thumb-up-outline</v-icon
-          ></v-btn
-        >
-        <v-btn class="dislike" icon style="background-color: white" x-large
-          ><v-icon x-large style="color: red"
-            >mdi-thumb-down-outline</v-icon
-          ></v-btn
-        >
-      </div> -->
     </div>
   </main>
 </template>
@@ -59,7 +45,6 @@ export default {
       return post.blogID === this.$route.params.blogid;
     });
   },
-
   methods: {
     goBack() {
       this.$router.go(-1);
@@ -76,9 +61,8 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .post-view {
-  // john/vuetify/branch
   .container {
     display: flex;
     flex-direction: column;
@@ -116,14 +100,6 @@ export default {
   .author {
     margin: 30px 0;
     font-style: italic;
-  }
-  .like,
-  .dislike {
-    margin-top: 5px;
-    margin-left: 10px;
-  }
-  h6 {
-    margin-top: 20px;
   }
 }
 </style>

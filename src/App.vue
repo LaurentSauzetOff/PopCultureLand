@@ -109,7 +109,6 @@ button,
     background-color: rgba(48, 48, 48, 0.7);
   }
 }
-
 .button-ghost {
   color: #000;
   padding: 0;
