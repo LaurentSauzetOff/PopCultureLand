@@ -1,32 +1,34 @@
 <template>
-  <div class="home">
-    <BlogPost v-if="!user" :post="welcomeScreen" />
-    <BlogPost
-      :post="post"
-      v-for="(post, index) in blogPostsFeed"
-      :key="index"
-    />
-    <div class="blog-card-wrap">
+  <main class="home">
+    <section>
+      <BlogPost v-if="!user" :post="welcomeScreen" />
+      <BlogPost
+        :post="post"
+        v-for="(post, index) in blogPostsFeed"
+        :key="index"
+      />
+    </section>
+    <section class="blog-card-wrap">
       <div class="container">
-        <h3>Voir les articles les plus récents</h3>
+        <h3>Articles récents</h3>
         <div class="blog-cards">
           <BlogCard
             :post="post"
             v-for="(post, index) in blogPostsCards"
             :key="index"
-          />  
+          />
         </div>
       </div>
-    </div>
-    <div v-if="!user" class="updates">
+    </section>
+    <section v-if="!user" class="updates">
       <div class="container">
-        <h2>Ne manquez aucune publication. Enregistrez-vous gratuitement !</h2>
+        <h2>Ne ratez plus un article : créez votre compte gratuitement !</h2>
         <router-link class="router-button" to="#">
-          Enregistrez-vous sur PopCultureLand <Arrow class="arrow arrow-light" />
+          S'enregistrer sur PopCultureLand <Arrow class="arrow arrow-light" />
         </router-link>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -41,7 +43,7 @@ export default {
       welcomeScreen: {
         title: "Bienvenue !",
         blogPost:
-          "Articles de blog hebdomadaires avec tout ce qui concerne la programmation, y compris HTML, CSS, JavaScript et plus encore. Inscrivez-vous aujourd'hui pour ne manquer aucune publication !",
+          "Des articles fréquents sur les jeux vidéo, le cinéma et la pop culture en général !",
         welcomeScreen: true,
         photo: "coding",
       },
@@ -63,12 +65,10 @@ export default {
 
 <style lang="scss" scoped>
 .blog-card-wrap {
-  display: flex;
   h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 28px;
-    margin: 32px 0;
+    margin-bottom: 32px;
   }
 }
 
@@ -85,9 +85,7 @@ export default {
 
     .router-button {
       display: flex;
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: .2em;
-      font-size: 1em;
+      font-size: 14px;
       text-decoration: none;
       @media (min-width: 800px) {
         margin-left: auto;
@@ -95,8 +93,7 @@ export default {
     }
 
     h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
+      font-weight: 300;
       font-size: 32px;
       max-width: 425px;
       width: 100%;

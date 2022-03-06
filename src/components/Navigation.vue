@@ -12,43 +12,49 @@
           <router-link class="link" :to="{ name: 'Blogs' }"
             >Articles</router-link
           >
-          <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }">Ecrire un article</router-link>
+          <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }"
+            >Ecrire un article</router-link
+          >
           <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
-            >Connexion / Enregistrement</router-link
+            >S'enregistrer / se connecter</router-link
           >
         </ul>
-        <div v-if="user" @click="toggleProfileMenu" class="profile" ref="profile">
-          <span>{{ this.$store.state.profilInitials }}</span>
+        <div
+          v-if="user"
+          :class="{ 'mobile-user-menu': mobile }"
+          @click="toggleProfileMenu"
+          class="profile"
+          ref="profile"
+        >
+          <span>{{ this.$store.state.profileInitials }}</span>
           <div v-show="profileMenu" class="profile-menu">
             <div class="info">
-              <p class="initials">{{ this.$store.state.profilInitials }}</p>
+              <p class="initials">{{ this.$store.state.profileInitials }}</p>
               <div class="right">
                 <p>
                   {{ this.$store.state.profileFirstName }}
                   {{ this.$store.state.profileLastName }}
                 </p>
-                <p>{{ this.$store.state.profileUserName }}</p>
+                <p>{{ this.$store.state.profileUsername }}</p>
                 <p>{{ this.$store.state.profileEmail }}</p>
               </div>
             </div>
             <div class="options">
               <div class="option">
-                <router-link class="option" :to="{name: 'Profile'}">
+                <router-link class="option" :to="{ name: 'Profile' }">
                   <userIcon class="icon" />
                   <p>Profil</p>
                 </router-link>
               </div>
               <div v-if="admin" class="option">
-                <router-link class="option" :to="{name: 'Admin'}">
+                <router-link class="option" :to="{ name: 'Admin' }">
                   <adminIcon class="icon" />
                   <p>Admin</p>
                 </router-link>
               </div>
               <div @click="signOut" class="option">
-                
-                  <signOutIcon class="icon" />
-                  <p>Déconnexion</p>
-                
+                <signOutIcon class="icon" />
+                <p>Déconnexion</p>
               </div>
             </div>
           </div>
@@ -60,9 +66,11 @@
       <ul class="mobile-nav" v-show="mobileNav">
         <router-link class="link" :to="{ name: 'Home' }">Accueil</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Articles</router-link>
-        <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }">Ecrire un article</router-link>
+        <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }"
+          >Ecrire un article</router-link
+        >
         <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
-          >Connexion / Inscription</router-link
+          >S'enregistrer / se connecter</router-link
         >
       </ul>
     </transition>
@@ -76,25 +84,31 @@ import adminIcon from "../assets/Icons/user-crown-light.svg";
 import signOutIcon from "../assets/Icons/sign-out-alt-regular.svg";
 import firebase from "firebase/app";
 import "firebase/auth";
+
 export default {
   name: "navigation",
-  components: { menuIcon, userIcon, adminIcon, signOutIcon },
+  components: {
+    menuIcon,
+    userIcon,
+    adminIcon,
+    signOutIcon,
+  },
   data() {
     return {
       profileMenu: null,
       mobile: null,
       mobileNav: null,
-      windowWidth: null,
+      windownWidth: null,
     };
   },
   created() {
     window.addEventListener("resize", this.checkScreen);
-    this.checkScreen;
+    this.checkScreen();
   },
   methods: {
     checkScreen() {
-      this.windowWidth = window.innerWidth;
-      if (this.windowWidth <= 750) {
+      this.windownWidth = window.innerWidth;
+      if (this.windownWidth <= 750) {
         this.mobile = true;
         return;
       }
@@ -102,41 +116,43 @@ export default {
       this.mobileNav = false;
       return;
     },
+
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;
     },
+
     toggleProfileMenu(e) {
       if (e.target === this.$refs.profile) {
         this.profileMenu = !this.profileMenu;
       }
     },
-    signOut(){
+
+    signOut() {
       firebase.auth().signOut();
-      window.location.reload()
-    }
+      window.location.reload();
+    },
   },
   computed: {
-    user(){
-      return this.$store.state.user
+    user() {
+      return this.$store.state.user;
     },
-    admin(){
-      return this.$store.state.profileAdmin
+    admin() {
+      return this.$store.state.profileAdmin;
     },
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 header {
-  background-color: rgb(238, 238, 238);
+  background-color: #fff;
   padding: 0 25px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   z-index: 99;
 
   .link {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     padding: 0 8px;
     transition: 0.3s color ease;
 
@@ -148,16 +164,15 @@ header {
   nav {
     display: flex;
     padding: 25px 0;
-    font-family: "Montserrat", sans-serif;
 
     .branding {
       display: flex;
       align-items: center;
 
       .header {
-        font-weight: 900;
-        font-size: 2.5em;
-        color: black;
+        font-weight: 600;
+        font-size: 24px;
+        color: #000;
         text-decoration: none;
       }
     }
@@ -181,6 +196,10 @@ header {
         }
       }
 
+      .profile:hover {
+        background-color: blue;
+        transition: ease-in-out 0.1s;
+      }
       .profile {
         position: relative;
         cursor: pointer;
@@ -190,12 +209,13 @@ header {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        color: white;
+        color: #fff;
         background-color: #303030;
 
         span {
           pointer-events: none;
         }
+
         .profile-menu {
           position: absolute;
           top: 60px;
@@ -209,7 +229,7 @@ header {
             display: flex;
             align-items: center;
             padding: 15px;
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid #fff;
 
             .initials {
               position: initial;
@@ -222,6 +242,7 @@ header {
               justify-content: center;
               border-radius: 50%;
             }
+
             .right {
               flex: 1;
               margin-left: 24px;
@@ -239,7 +260,6 @@ header {
 
           .options {
             padding: 15px;
-
             .option {
               text-decoration: none;
               color: #fff;
@@ -251,7 +271,6 @@ header {
                 width: 18px;
                 height: auto;
               }
-
               p {
                 font-size: 14px;
                 margin-left: 12px;
@@ -265,6 +284,10 @@ header {
         }
       }
     }
+
+    .mobile-user-menu {
+      margin-right: 40px;
+    }
   }
 
   .menu-icon {
@@ -277,6 +300,9 @@ header {
   }
 
   .mobile-nav {
+    padding: 20px;
+    width: 70%;
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -284,13 +310,10 @@ header {
     background-color: #303030;
     top: 0;
     left: 0;
-    padding: 20px;
-    width: 70%;
-    max-width: 281px;
 
     .link {
-      color: rgb(238, 238, 238);
       padding: 15px 0;
+      color: #fff;
     }
   }
 
@@ -300,7 +323,7 @@ header {
   }
 
   .mobile-nav-enter {
-    transform: translateX(-281px);
+    transform: translateX(-250px);
   }
 
   .mobile-nav-enter-to {
@@ -308,7 +331,7 @@ header {
   }
 
   .mobile-nav-leave-to {
-    transform: translateX(-281px);
+    transform: translateX(-250px);
   }
 }
 </style>

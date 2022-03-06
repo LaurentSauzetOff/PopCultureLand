@@ -1,10 +1,6 @@
 <template>
   <div class="profile">
-    <Modal
-      v-if="modalActive"
-      :modalMessage="modalMessage"
-      v-on:close-modal="closeModal"
-    />
+    <Modal v-if="modalActive" :modalMessage="modalMessage" v-on:close-modal="closeModal" />
     <div class="container">
       <h2>Paramètres du compte</h2>
       <div class="profile-info">
@@ -22,14 +18,14 @@
           <input type="text" id="lastName" v-model="lastName" />
         </div>
         <div class="input">
-          <label for="username">Nom d'utilisateur :</label>
+          <label for="username">Username :</label>
           <input type="text" id="username" v-model="username" />
         </div>
         <div class="input">
           <label for="email">Email :</label>
           <input disabled type="text" id="email" v-model="email" />
         </div>
-        <button @click="updateProfile">Sauvegarder</button>
+        <button @click="updateProfile">Enregistrer les changements</button>
       </div>
     </div>
   </div>
@@ -46,7 +42,7 @@ export default {
   },
   data() {
     return {
-      modalMessage: "Changements sauvegardés !",
+      modalMessage: "Changes were saved!",
       modalActive: null,
     };
   },
@@ -105,8 +101,7 @@ export default {
 
     .profile-info {
       border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       padding: 32px;
       background-color: #f1f1f1;
       display: flex;

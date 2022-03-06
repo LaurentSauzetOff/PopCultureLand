@@ -7,23 +7,15 @@
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p class="content-preview" v-else v-html="post.blogHTML"></p>
         <router-link class="link link-light" v-if="post.welcomeScreen" to="#">
-          Connexion / Inscription<Arrow class="arrow arrow-light" />
+          S'enregistrer / se connecter<Arrow class="arrow arrow-light" />
         </router-link>
-        <router-link
-          class="link"
-          v-else
-          :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
-        >
-          Voir l'article<Arrow class="arrow" />
+        <router-link class="link" v-else :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }">
+          Lire l'article...<Arrow class="arrow" />
         </router-link>
       </div>
     </div>
     <div class="blog-photo">
-      <img
-        v-if="post.welcomeScreen"
-        :src="require(`../assets/blogPhotos/${post.photo}.jpg`)"
-        alt=""
-      />
+      <img v-if="post.welcomeScreen" :src="require(`../assets/blogPhotos/${post.photo}.jpg`)" alt="" />
       <img v-else :src="post.blogCoverPhoto" alt="" />
     </div>
   </div>
@@ -49,8 +41,7 @@ export default {
 .blog-wrapper {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   @media (min-width: 700px) {
     min-height: 650px;
     max-height: 650px;
@@ -63,7 +54,6 @@ export default {
     justify-content: center;
     align-items: center;
     flex: 4;
-    font-family: 'Montserrat', sans-serif;
     order: 2;
     @media (min-width: 700px) {
       order: 1;
@@ -81,7 +71,7 @@ export default {
 
       h2 {
         font-size: 32px;
-        font-weight: 400;
+        font-weight: 300;
         text-transform: uppercase;
         margin-bottom: 24px;
         @media (min-width: 700px) {
@@ -90,19 +80,23 @@ export default {
       }
 
       p {
-        font-family: 'EB Garamond', serif;
-        font-size: 1.2em;
+        font-size: 15px;
         font-weight: 300;
         line-height: 1.7;
       }
 
       .content-preview {
-        font-size: 13px;
+        font-size: 14px;
         max-height: 24px;
-        width: 250px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        p {
+          width: 250px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
 
       .link {
@@ -129,8 +123,7 @@ export default {
   .blog-photo {
     order: 1;
     flex: 3;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
     @media (min-width: 700px) {
       order: 2;

@@ -10,9 +10,6 @@
 <script>
 export default {
   props: ["modalMessage"],
-  data() {
-    return {};
-  },
   methods: {
     closeModal() {
       this.$emit("close-modal");
@@ -32,6 +29,7 @@ export default {
   height: 100%;
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
+
   .modal-content {
     display: flex;
     flex-direction: column;
@@ -40,9 +38,11 @@ export default {
     width: 300px;
     padding: 40px 30px;
     background-color: #fff;
+
     p {
       text-align: center;
     }
+
     button {
       align-self: center;
     }
