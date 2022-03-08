@@ -1,5 +1,5 @@
 <template>
-  <div class="admin">
+  <section class="admin">
     <v-btn icon style="background-color: white" x-large @click="goBack"
       ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
     >
@@ -19,7 +19,7 @@
         <button @click="addAdmin" class="button">Envoyer</button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -3,11 +3,6 @@
     <div class="container">
       <div class="left">
         <div class="col-1">
-          <v-img
-            src="@/assets/P.png"
-            width="50"
-            style="margin-right: auto"
-          ></v-img>
           <router-link class="header" :to="{ name: 'Home' }"
             >PopCultureLand</router-link
           >

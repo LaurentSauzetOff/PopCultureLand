@@ -1,11 +1,11 @@
 <template>
-  <div class="app-wrapper">
+  <main class="app-wrapper">
     <div class="app" v-if="this.$store.state.postLoaded">
       <Navigation v-if="!navigation" />
       <router-view />
       <Footer v-if="!navigation" />
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -74,7 +74,7 @@ export default {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  color: green;
+  color: black;
 }
 .link-light {
   color: #fff;

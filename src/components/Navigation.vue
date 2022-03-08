@@ -18,6 +18,9 @@
           <router-link class="link" :to="{ name: 'Blogs' }"
             >Articles</router-link
           >
+          <router-link class="link" :to="{ name: 'Events' }"
+            >Evenements</router-link
+          >
           <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }"
             >Ecrire un article</router-link
           >
@@ -160,10 +163,11 @@ header {
   .link {
     font-weight: 500;
     padding: 0 8px;
-    transition: 0.3s color ease;
+    border-bottom: 1px solid transparent;
+    transition: 0.5s ease-in all;
 
-    &:hover {
-      color: #1eb8b8;
+        &:hover {
+          border-bottom-color: #303030;
     }
   }
 
@@ -255,7 +259,6 @@ header {
 
             .right {
               flex: 1;
-              margin-left: 24px;
 
               p:nth-child(1) {
                 font-size: 14px;
