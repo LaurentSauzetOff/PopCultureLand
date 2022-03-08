@@ -1,11 +1,18 @@
 <template>
-  <div class="app-wrapper">
-    <div class="app" v-if="this.$store.state.postLoaded">
-      <Navigation v-if="!navigation" />
-      <router-view />
-      <Footer v-if="!navigation" />
+  <v-app dark>
+    <div class="app-wrapper">
+      <div class="app" v-if="this.$store.state.postLoaded">
+        <Navigation v-if="!navigation" />
+        <!-- <v-switch
+          label="Toggle dark them"
+          class="pl-5"
+          @change="toggleDarkTheme()"
+        ></v-switch> -->
+        <router-view />
+        <Footer v-if="!navigation" />
+      </div>
     </div>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -31,8 +38,13 @@ export default {
     this.checkRoute();
     this.$store.dispatch("getPost");
   },
+
   mounted() {},
   methods: {
+    // toggleDarkTheme() {
+    //   this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    //   console.log(this.$vuetify.theme.dark);
+    // },
     checkRoute() {
       if (
         this.$route.name === "Login" ||
@@ -74,7 +86,7 @@ export default {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  color: green;
+  color: white;
 }
 .link-light {
   color: #fff;
@@ -83,12 +95,14 @@ export default {
   margin-left: 8px;
   width: 12px;
   path {
-    fill: green;
+    fill: #121212;
   }
 }
 .arrow-light {
+  margin-left: 8px;
+  width: 30px;
   path {
-    fill: #fff;
+    fill: white;
   }
 }
 button,
@@ -143,7 +157,7 @@ button,
 .blog-card-wrap {
   position: relative;
   padding: 80px 16px;
-  background-color: #f1f1f1;
+  background-color: #121212;
   @media (min-width: 500px) {
     padding: 100px 16px;
   }

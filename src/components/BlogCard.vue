@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-card">
+  <div class="blog-card" dark>
     <div v-show="editPost" class="icons">
       <div @click="editBlog" class="icon">
         <Edit class="edit" />
@@ -68,12 +68,11 @@ export default {
   background-color: #fff;
   min-height: 420px;
   transition: 0.5s ease all;
-  box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+  // box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
 
   &:hover {
     transform: rotateZ(-1deg) scale(1.01);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 14px -1px white, 8px 8px 14px -1px white;
   }
 
   .icons {
@@ -133,6 +132,7 @@ export default {
     z-index: 3;
     padding: 32px 16px;
     color: #000;
+    background-color: #fff !important;
 
     h4 {
       padding-bottom: 8px;
@@ -155,6 +155,7 @@ export default {
       font-size: 12px;
       padding-bottom: 4px;
       transition: 0.5s ease-in all;
+      color: #121212;
 
       &:hover {
         color: rgba(48, 48, 48, 0.8);
@@ -162,6 +163,7 @@ export default {
 
       .arrow {
         width: 10px;
+        color: #121212;
       }
     }
   }

@@ -14,7 +14,7 @@
           v-else
           :to="{ name: 'ViewBlog', params: { blogid: this.post.blogTitle } }"
         >
-          Lire l'article...<Arrow class="arrow" />
+          Lire l'article...<Arrow class="arrow-light" />
         </router-link>
       </div>
     </div>
@@ -117,6 +117,7 @@ export default {
         padding-bottom: 4px;
         border-bottom: 1px solid transparent;
         transition: 0.5s ease-in all;
+        color: #fff;
 
         &:hover {
           border-bottom-color: #303030;
@@ -134,7 +135,7 @@ export default {
   .blog-photo {
     order: 1;
     flex: 3;
-    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+    box-shadow: 0 8px 14px -1px white, 8px 8px 14px -1px white;
 
     @media (min-width: 700px) {
       order: 2;

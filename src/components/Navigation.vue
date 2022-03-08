@@ -199,6 +199,7 @@ header {
 
         .link {
           margin-right: 32px;
+          color: #121212;
         }
 
         .link:last-child {
