@@ -19,7 +19,7 @@
       </h6>
       <router-link
         class="link"
-        :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
+        :to="{ name: 'ViewBlog', params: { blogid: this.post.blogTitle } }"
       >
         Lire l'article... <Arrow class="arrow" />
       </router-link>

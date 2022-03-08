@@ -42,7 +42,7 @@ export default {
   },
   async mounted() {
     this.currentBlog = await this.$store.state.blogPosts.filter((post) => {
-      return post.blogID === this.$route.params.blogid;
+      return post.blogTitle === this.$route.params.blogid;
     });
   },
   methods: {

@@ -63,7 +63,7 @@ export default new Vuex.Store({
       state.blogPhotoName = payload.blogCoverPhotoName;
     },
     filterBlogPost(state, payload) {
-      state.blogPosts = state.blogPosts.filter((post) => post.blogID !== payload);
+      state.blogPosts = state.blogPosts.filter((post) => post.blogTitle !== payload);
     },
     updateUser(state, payload) {
       state.user = payload;
@@ -112,7 +112,7 @@ export default new Vuex.Store({
       const dataBase = await db.collection("blogPosts").orderBy("date", "desc");
       const dbResults = await dataBase.get();
       dbResults.forEach((doc) => {
-        if (!state.blogPosts.some((post) => post.blogID === doc.id)) {
+        if (!state.blogPosts.some((post) => post.blogTitle === doc.id)) {
           const data = {
             blogID: doc.data().blogID,
             blogHTML: doc.data().blogHTML,
