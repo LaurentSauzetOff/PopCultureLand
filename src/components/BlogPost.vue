@@ -14,7 +14,7 @@
           v-else
           :to="{ name: 'ViewBlog', params: { blogid: this.post.blogTitle } }"
         >
-          Lire l'article...<Arrow class="arrow-light" />
+          Lire l'article...<Arrow class="arrow arrow-light" />
         </router-link>
       </div>
     </div>

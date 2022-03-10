@@ -3,11 +3,7 @@
     <div class="app-wrapper">
       <div class="app" v-if="this.$store.state.postLoaded">
         <Navigation v-if="!navigation" />
-        <!-- <v-switch
-          label="Toggle dark them"
-          class="pl-5"
-          @change="toggleDarkTheme()"
-        ></v-switch> -->
+
         <router-view />
         <Footer v-if="!navigation" />
       </div>
@@ -41,10 +37,6 @@ export default {
 
   mounted() {},
   methods: {
-    // toggleDarkTheme() {
-    //   this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-    //   console.log(this.$vuetify.theme.dark);
-    // },
     checkRoute() {
       if (
         this.$route.name === "Login" ||

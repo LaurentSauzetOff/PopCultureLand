@@ -24,7 +24,15 @@
           <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
             >S'enregistrer / se connecter</router-link
           >
+          <router-link class="link" :to="{ name: 'About' }"
+            >A propos
+          </router-link>
         </ul>
+        <v-switch
+          label="Dark Mode"
+          color="black"
+          @change="toggleDarkTheme()"
+        ></v-switch>
         <div
           v-if="user"
           :class="{ 'mobile-user-menu': mobile }"
@@ -101,6 +109,7 @@ export default {
   },
   data() {
     return {
+      darkmode: false,
       profileMenu: null,
       mobile: null,
       mobileNav: null,
@@ -112,6 +121,10 @@ export default {
     this.checkScreen();
   },
   methods: {
+    toggleDarkTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      console.log(this.$vuetify.theme.dark);
+    },
     checkScreen() {
       this.windownWidth = window.innerWidth;
       if (this.windownWidth <= 750) {
