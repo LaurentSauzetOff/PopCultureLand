@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-card" dark>
+  <div class="blog-card">
     <div v-show="editPost" class="icons">
       <div @click="editBlog" class="icon">
         <Edit class="edit" />
@@ -19,7 +19,7 @@
       </h6>
       <router-link
         class="link"
-        :to="{ name: 'ViewBlog', params: { blogid: this.post.blogTitle } }"
+        :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
       >
         Lire l'article... <Arrow class="arrow" />
       </router-link>
@@ -72,7 +72,7 @@ export default {
 
   &:hover {
     transform: rotateZ(-1deg) scale(1.01);
-    box-shadow: 0 8px 14px -1px white, 8px 8px 14px -1px white;
+    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
   }
 
   .icons {
@@ -155,7 +155,7 @@ export default {
       font-size: 12px;
       padding-bottom: 4px;
       transition: 0.5s ease-in all;
-      color: #121212;
+      color: #111;
 
       &:hover {
         color: rgba(48, 48, 48, 0.8);
@@ -163,7 +163,6 @@ export default {
 
       .arrow {
         width: 10px;
-        color: #121212;
       }
     }
   }

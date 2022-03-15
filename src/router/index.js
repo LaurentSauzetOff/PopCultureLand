@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Blogs from "../views/Blogs.vue";
+import Events from "../views/Events.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
@@ -32,6 +33,15 @@ const routes = [{
     component: Blogs,
     meta: {
       title: "Blogs",
+      requiresAuth: false,
+    },
+  },
+  {
+    path: "/events",
+    name: "Events",
+    component: Events,
+    meta: {
+      title: "Events",
       requiresAuth: false,
     },
   },

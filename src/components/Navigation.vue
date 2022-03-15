@@ -9,7 +9,7 @@
         ></v-img>
         <router-link class="header" :to="{ name: 'Home' }"
           >PopCultureLand
-          <p id="beta">bêta 00.02</p></router-link
+          <p id="beta">bêta 00.03</p></router-link
         >
       </div>
       <div class="nav-links">
@@ -17,6 +17,9 @@
           <router-link class="link" :to="{ name: 'Home' }">Accueil</router-link>
           <router-link class="link" :to="{ name: 'Blogs' }"
             >Articles</router-link
+          >
+          <router-link class="link" :to="{ name: 'Events' }"
+            >Evenements</router-link
           >
           <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }"
             >Ecrire un article</router-link
@@ -173,10 +176,11 @@ header {
   .link {
     font-weight: 500;
     padding: 0 8px;
-    transition: 0.3s color ease;
+    border-bottom: 1px solid transparent;
+    transition: 0.5s ease-in all;
 
     &:hover {
-      color: #1eb8b8;
+      border-bottom-color: #303030;
     }
   }
 
@@ -212,7 +216,7 @@ header {
 
         .link {
           margin-right: 32px;
-          color: #121212;
+          color: #000;
         }
 
         .link:last-child {
@@ -269,7 +273,6 @@ header {
 
             .right {
               flex: 1;
-              margin-left: 24px;
 
               p:nth-child(1) {
                 font-size: 14px;

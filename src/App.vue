@@ -1,13 +1,12 @@
 <template>
   <v-app dark>
-    <div class="app-wrapper">
+    <main class="app-wrapper">
       <div class="app" v-if="this.$store.state.postLoaded">
         <Navigation v-if="!navigation" />
-
         <router-view />
         <Footer v-if="!navigation" />
       </div>
-    </div>
+    </main>
   </v-app>
 </template>
 
@@ -34,7 +33,6 @@ export default {
     this.checkRoute();
     this.$store.dispatch("getPost");
   },
-
   mounted() {},
   methods: {
     checkRoute() {
@@ -81,18 +79,16 @@ export default {
   color: white;
 }
 .link-light {
-  color: #fff;
+  color: black;
 }
 .arrow {
   margin-left: 8px;
   width: 12px;
   path {
-    fill: #121212;
+    fill: black;
   }
 }
 .arrow-light {
-  margin-left: 8px;
-  width: 30px;
   path {
     fill: white;
   }
@@ -149,7 +145,7 @@ button,
 .blog-card-wrap {
   position: relative;
   padding: 80px 16px;
-  background-color: #121212;
+  background-color: #f1f1f1;
   @media (min-width: 500px) {
     padding: 100px 16px;
   }

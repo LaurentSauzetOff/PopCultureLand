@@ -12,7 +12,7 @@
         <router-link
           class="link"
           v-else
-          :to="{ name: 'ViewBlog', params: { blogid: this.post.blogTitle } }"
+          :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
         >
           Lire l'article...<Arrow class="arrow arrow-light" />
         </router-link>
@@ -117,7 +117,7 @@ export default {
         padding-bottom: 4px;
         border-bottom: 1px solid transparent;
         transition: 0.5s ease-in all;
-        color: #fff;
+        color: white;
 
         &:hover {
           border-bottom-color: #303030;
@@ -127,6 +127,7 @@ export default {
       .link-light {
         &:hover {
           border-bottom-color: #ffff;
+          color: black;
         }
       }
     }
@@ -135,7 +136,7 @@ export default {
   .blog-photo {
     order: 1;
     flex: 3;
-    box-shadow: 0 8px 14px -1px white, 8px 8px 14px -1px white;
+    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
 
     @media (min-width: 700px) {
       order: 2;

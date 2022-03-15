@@ -8,7 +8,7 @@
     <v-btn icon style="background-color: white" x-large @click="goBack"
       ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
     >
-    <div class="container">
+    <section class="container">
       <h2>Paramètres du compte</h2>
       <div class="profile-info">
         <div class="initials">{{ $store.state.profileInitials }}</div>
@@ -34,7 +34,7 @@
         </div>
         <button @click="updateProfile">Enregistrer les changements</button>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 

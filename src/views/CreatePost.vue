@@ -153,23 +153,21 @@ export default {
               this.loading = false;
               this.$router.push({
                 name: "ViewBlog",
-                params: { blogid: this.blogTitle },
+                params: { blogid: dataBase.id },
               });
             }
           );
           return;
         }
         this.error = true;
-        this.errorMsg =
-          "Assurez-vous d'avoir téléchargé une photo de couverture !";
+        this.errorMsg = "Please ensure you uploaded a cover photo!";
         setTimeout(() => {
           this.error = false;
         }, 5000);
         return;
       }
       this.error = true;
-      this.errorMsg =
-        "Veuillez vous assurer que le titre du blog et l'article du blog ont été remplis !";
+      this.errorMsg = "Please ensure Blog Title & Blog Post has been filled!";
       setTimeout(() => {
         this.error = false;
       }, 5000);
@@ -220,7 +218,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 .create-post {
   position: relative;
   height: 100%;
