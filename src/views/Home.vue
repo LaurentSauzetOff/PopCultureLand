@@ -1,7 +1,6 @@
 <template>
   <main class="home">
     <section>
-
       <BlogPost
         :post="post"
         v-for="(post, index) in blogPostsFeed"
@@ -87,6 +86,7 @@ export default {
       display: flex;
       font-size: 14px;
       text-decoration: none;
+      color: #fff;
       @media (min-width: 800px) {
         margin-left: auto;
       }

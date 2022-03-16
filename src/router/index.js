@@ -12,6 +12,7 @@ import CreatePost from "../views/CreatePost.vue";
 import BlogPreview from "../views/BlogPreview.vue";
 import ViewBlog from "../views/ViewBlog.vue";
 import EditBlog from "../views/EditBlog.vue";
+import About from "../views/About.vue";
 import firebase from "firebase/app";
 import "firebase/auth";
 
@@ -127,6 +128,15 @@ const routes = [{
       title: "Edit Blog Post",
       requiresAuth: true,
       requiresAdmin: true,
+    },
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+    meta: {
+      title: "A propos",
+      requiresAuth: false,
     },
   },
 ];

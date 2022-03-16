@@ -14,7 +14,7 @@
           v-else
           :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
         >
-          Lire l'article...<Arrow class="arrow" />
+          Lire l'article...<Arrow class="arrow arrow-light" />
         </router-link>
       </div>
     </div>
@@ -117,6 +117,7 @@ export default {
         padding-bottom: 4px;
         border-bottom: 1px solid transparent;
         transition: 0.5s ease-in all;
+        color: white;
 
         &:hover {
           border-bottom-color: #303030;
@@ -126,6 +127,7 @@ export default {
       .link-light {
         &:hover {
           border-bottom-color: #ffff;
+          color: black;
         }
       }
     }

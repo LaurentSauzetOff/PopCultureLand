@@ -69,7 +69,7 @@ export default {
     margin-bottom: 30px;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+    box-shadow: 0 8px 14px -1px white, 8px 8px 14px -1px white;
 
     .container {
       display: flex;

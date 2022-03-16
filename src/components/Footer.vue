@@ -32,7 +32,6 @@
                 target="_blank"
                 ><linkedin class="svg-icon"
               /></a>
-
             </li>
             <li>
               <a href="https://www.buymeacoffee.com/laurentsauU" target="_blank"
@@ -144,7 +143,6 @@
                   class="svg-icon"
                   id="utip"
               /></a>
-
             </li>
           </ul>
         </div>
@@ -162,6 +160,9 @@
             <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
               >S'enregistrer / se connecter</router-link
             >
+            <router-link class="link" :to="{ name: 'About' }"
+              >A propos
+            </router-link>
           </ul>
         </div>
       </div>

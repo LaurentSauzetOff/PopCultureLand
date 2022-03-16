@@ -1,11 +1,13 @@
 <template>
-  <main class="app-wrapper">
-    <div class="app" v-if="this.$store.state.postLoaded">
-      <Navigation v-if="!navigation" />
-      <router-view />
-      <Footer v-if="!navigation" />
-    </div>
-  </main>
+  <v-app dark>
+    <main class="app-wrapper">
+      <div class="app" v-if="this.$store.state.postLoaded">
+        <Navigation v-if="!navigation" />
+        <router-view />
+        <Footer v-if="!navigation" />
+      </div>
+    </main>
+  </v-app>
 </template>
 
 <script>
@@ -74,21 +76,21 @@ export default {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  color: white;
 }
 .link-light {
-  color: #fff;
+  color: black;
 }
 .arrow {
   margin-left: 8px;
   width: 12px;
   path {
-    fill: green;
+    fill: black;
   }
 }
 .arrow-light {
   path {
-    fill: #fff;
+    fill: white;
   }
 }
 button,
