@@ -49,7 +49,6 @@ export default {
 .blog-wrapper {
   display: flex;
   flex-direction: column;
-  //box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
 
   margin-top: 20px;
   margin-bottom: 20px;
@@ -129,7 +128,7 @@ export default {
   .blog-photo {
     order: 1;
     flex: 3;
-    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+    box-shadow: 0 8px 14px -1px, 8px 8px 14px -1px;
 
     @media (min-width: 700px) {
       order: 2;

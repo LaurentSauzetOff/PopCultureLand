@@ -68,11 +68,10 @@ export default {
   background-color: #fff;
   min-height: 420px;
   transition: 0.5s ease all;
-  // box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
 
   &:hover {
     transform: rotateZ(-1deg) scale(1.01);
-    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+    box-shadow: 0 8px 14px -1px, 8px 8px 14px -1px;
   }
 
   .icons {
