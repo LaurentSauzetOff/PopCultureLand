@@ -71,7 +71,7 @@ export default {
 
   &:hover {
     transform: rotateZ(-1deg) scale(1.01);
-    box-shadow: 0 8px 14px -1px, 8px 8px 14px -1px;
+    box-shadow: -10px -8px 14px -1px black, 10px -8px 14px -1px black;
   }
 
   .icons {

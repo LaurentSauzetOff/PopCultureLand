@@ -128,7 +128,7 @@ export default {
   .blog-photo {
     order: 1;
     flex: 3;
-    box-shadow: 0 8px 14px -1px, 8px 8px 14px -1px;
+    box-shadow: -10px -8px 14px -1px, 10px -8px 14px -1px;
 
     @media (min-width: 700px) {
       order: 2;
