@@ -76,23 +76,17 @@ export default {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
+  color: primary;
 }
-.link-light {
-  color: black;
-}
+
 .arrow {
   margin-left: 8px;
   width: 12px;
   path {
-    fill: black;
+    fill: primary;
   }
 }
-.arrow-light {
-  path {
-    fill: white;
-  }
-}
+
 button,
 .router-button {
   transition: 500ms ease all;

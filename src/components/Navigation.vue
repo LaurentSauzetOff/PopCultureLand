@@ -33,6 +33,7 @@
         </ul>
         <v-switch
           label="Dark Mode"
+          hide-details
           color="black"
           @change="toggleDarkTheme()"
         ></v-switch>

@@ -6,15 +6,15 @@
         <h2 v-else>{{ post.blogTitle }}</h2>
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p class="content-preview" v-else v-html="post.blogHTML"></p>
-        <router-link class="link link-light" v-if="post.welcomeScreen" to="#">
-          S'enregistrer / se connecter<Arrow class="arrow arrow-light" />
+        <router-link class="link" v-if="post.welcomeScreen" to="#">
+          S'enregistrer / se connecter<Arrow class="arrow" />
         </router-link>
         <router-link
           class="link"
           v-else
           :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
         >
-          Lire l'article...<Arrow class="arrow arrow-light" />
+          Lire l'article...<Arrow class="arrow" />
         </router-link>
       </div>
     </div>
@@ -117,17 +117,10 @@ export default {
         padding-bottom: 4px;
         border-bottom: 1px solid transparent;
         transition: 0.5s ease-in all;
-        color: white;
+        color: primary;
 
         &:hover {
           border-bottom-color: #303030;
-        }
-      }
-
-      .link-light {
-        &:hover {
-          border-bottom-color: #ffff;
-          color: black;
         }
       }
     }
