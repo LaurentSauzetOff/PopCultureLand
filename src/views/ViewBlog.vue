@@ -102,4 +102,14 @@ export default {
     font-style: italic;
   }
 }
+
+.ql-video.ql-align-center {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 800px;
+  height: 500px;
+}
 </style>
