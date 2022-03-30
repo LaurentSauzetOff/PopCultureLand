@@ -9,7 +9,7 @@
         ></v-img>
         <router-link class="header" :to="{ name: 'Home' }"
           >PopCultureLand
-          <p id="beta">bêta 00.03</p></router-link
+          <p id="beta">bêta 00.04</p></router-link
         >
       </div>
       <div class="nav-links">
@@ -167,7 +167,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-color: #fff;
+  background-color: primary;
   padding: 0 25px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -199,7 +199,7 @@ header {
       .header {
         font-weight: 600;
         font-size: 24px;
-        color: #000;
+        color: primary;
         text-decoration: none;
       }
     }
@@ -216,7 +216,7 @@ header {
 
         .link {
           margin-right: 32px;
-          color: #000;
+          color: primary;
         }
 
         .link:last-child {
@@ -225,7 +225,7 @@ header {
       }
 
       .profile:hover {
-        background-color: blue;
+        background-color: rgb(30, 255, 0);
         transition: ease-in-out 0.1s;
       }
       .profile {
