@@ -76,23 +76,17 @@ export default {
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
+  color: primary;
 }
-.link-light {
-  color: black;
-}
+
 .arrow {
   margin-left: 8px;
   width: 12px;
   path {
-    fill: black;
+    fill: primary;
   }
 }
-.arrow-light {
-  path {
-    fill: white;
-  }
-}
+
 button,
 .router-button {
   transition: 500ms ease all;
@@ -145,7 +139,8 @@ button,
 .blog-card-wrap {
   position: relative;
   padding: 80px 16px;
-  background-color: #f1f1f1;
+  background-color: primary;
+  box-shadow: 0px 0px 20px;
   @media (min-width: 500px) {
     padding: 100px 16px;
   }

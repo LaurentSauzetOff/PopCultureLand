@@ -6,15 +6,15 @@
         <h2 v-else>{{ post.blogTitle }}</h2>
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p class="content-preview" v-else v-html="post.blogHTML"></p>
-        <router-link class="link link-light" v-if="post.welcomeScreen" to="#">
-          S'enregistrer / se connecter<Arrow class="arrow arrow-light" />
+        <router-link class="link" v-if="post.welcomeScreen" to="#">
+          S'enregistrer / se connecter<Arrow class="arrow" />
         </router-link>
         <router-link
           class="link"
           v-else
           :to="{ name: 'ViewBlog', params: { blogid: this.post.blogID } }"
         >
-          Lire l'article...<Arrow class="arrow arrow-light" />
+          Lire l'article...<Arrow class="arrow" />
         </router-link>
       </div>
     </div>
@@ -49,7 +49,6 @@ export default {
 .blog-wrapper {
   display: flex;
   flex-direction: column;
-  //box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
 
   margin-top: 20px;
   margin-bottom: 20px;
@@ -98,7 +97,7 @@ export default {
 
       .content-preview {
         font-size: 14px;
-        max-height: 32px;
+        max-height: 42px;
         white-space: normal;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -117,17 +116,10 @@ export default {
         padding-bottom: 4px;
         border-bottom: 1px solid transparent;
         transition: 0.5s ease-in all;
-        color: white;
+        color: primary;
 
         &:hover {
           border-bottom-color: #303030;
-        }
-      }
-
-      .link-light {
-        &:hover {
-          border-bottom-color: #ffff;
-          color: black;
         }
       }
     }
@@ -136,7 +128,7 @@ export default {
   .blog-photo {
     order: 1;
     flex: 3;
-    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+    box-shadow: -10px -8px 14px -1px, 10px -8px 14px -1px;
 
     @media (min-width: 700px) {
       order: 2;

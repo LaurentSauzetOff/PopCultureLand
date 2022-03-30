@@ -1,5 +1,8 @@
 <template>
   <div class="post-view">
+    <v-btn icon style="background-color: white" x-large @click="goBack"
+      ><v-icon x-large style="color: #303030">mdi-arrow-left</v-icon></v-btn
+    >
     <div class="container quillWrapper">
       <h2>{{ this.blogTitle }}</h2>
       <img :src="blogCoverPhoto" alt="" />
@@ -11,6 +14,11 @@
 <script>
 export default {
   name: "PostPreview",
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
+  },
   computed: {
     blogTitle() {
       return this.$store.state.blogTitle;

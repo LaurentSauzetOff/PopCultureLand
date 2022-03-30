@@ -23,7 +23,7 @@
       <div class="container">
         <h2>Ne ratez plus un article : créez votre compte gratuitement !</h2>
         <router-link class="router-button" to="#">
-          S'enregistrer sur PopCultureLand <Arrow class="arrow arrow-light" />
+          S'enregistrer sur PopCultureLand <Arrow class="arrow" />
         </router-link>
       </div>
     </section>
@@ -68,6 +68,7 @@ export default {
     font-weight: 300;
     font-size: 28px;
     margin-bottom: 32px;
+    color: primary;
   }
 }
 

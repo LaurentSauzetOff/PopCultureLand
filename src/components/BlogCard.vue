@@ -65,14 +65,14 @@ export default {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
+  border: #000 3px solid;
   background-color: #fff;
   min-height: 420px;
   transition: 0.5s ease all;
-  // box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
 
   &:hover {
     transform: rotateZ(-1deg) scale(1.01);
-    box-shadow: 0 8px 14px -1px black, 8px 8px 14px -1px black;
+    box-shadow: -10px -8px 14px -1px, 10px -8px 14px -1px;
   }
 
   .icons {
@@ -90,6 +90,7 @@ export default {
       height: 35px;
       border-radius: 50%;
       background-color: #fff;
+      color: #000;
       transition: 0.5s ease all;
 
       &:hover {

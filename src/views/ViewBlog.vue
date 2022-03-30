@@ -69,7 +69,7 @@ export default {
     margin-bottom: 30px;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 8px 14px -1px white, 8px 8px 14px -1px white;
+    box-shadow: -10px -8px 14px -1px, 10px -8px 14px -1px;
 
     .container {
       display: flex;
@@ -91,9 +91,9 @@ export default {
   }
   .post-content {
     p::first-letter {
-      color: blue;
-      font-size: 400%;
-      font-weight: 900;
+      color: #000;
+      font-size: 300%;
+      font-weight: 400;
     }
   }
 
