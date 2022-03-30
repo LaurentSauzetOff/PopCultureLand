@@ -68,6 +68,7 @@ export default {
     font-weight: 300;
     font-size: 28px;
     margin-bottom: 32px;
+    color: primary;
   }
 }
 

@@ -91,9 +91,9 @@ export default {
   }
   .post-content {
     p::first-letter {
-      color: blue;
-      font-size: 400%;
-      font-weight: 900;
+      color: #000;
+      font-size: 300%;
+      font-weight: 400;
     }
   }
 

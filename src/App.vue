@@ -139,7 +139,8 @@ button,
 .blog-card-wrap {
   position: relative;
   padding: 80px 16px;
-  background-color: #f1f1f1;
+  background-color: primary;
+  box-shadow: 0px 0px 20px;
   @media (min-width: 500px) {
     padding: 100px 16px;
   }
