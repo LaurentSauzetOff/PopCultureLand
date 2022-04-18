@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import Arrow from "../assets/Icons/arrow-right-light.svg";
+import Arrow from '../assets/Icons/arrow-right-light.svg';
 export default {
-  name: "blogPost",
-  props: ["post"],
+  name: 'blogPost',
+  props: ['post'],
   components: {
     Arrow,
   },
@@ -56,6 +56,9 @@ export default {
     min-height: 650px;
     max-height: 650px;
     flex-direction: row;
+  }
+  @media (max-width: 576px){
+    margin: 0;
   }
 
   .blog-content {
@@ -128,7 +131,24 @@ export default {
   .blog-photo {
     order: 1;
     flex: 3;
-    box-shadow: -10px -8px 14px -1px, 10px -8px 14px -1px;
+    box-shadow: 0 0 0 0, 0 0 0 0;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      box-shadow: -10px -8px 14px -1px, 10px -8px 14px -1px;
+      opacity: 0;
+      transition: opacity 500ms;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
 
     @media (min-width: 700px) {
       order: 2;

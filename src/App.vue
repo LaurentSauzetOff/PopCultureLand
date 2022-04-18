@@ -143,6 +143,9 @@ button,
   box-shadow: 0px 0px 20px;
   @media (min-width: 500px) {
     padding: 100px 16px;
+    h3 {
+      text-align: center;
+    }
   }
   .blog-cards {
     display: grid;
@@ -150,6 +153,11 @@ button,
     grid-template-columns: 1fr;
     @media (min-width: 500px) {
       grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 576px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     @media (min-width: 900px) {
       grid-template-columns: repeat(3, 1fr);
